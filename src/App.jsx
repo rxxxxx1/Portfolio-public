@@ -1,5 +1,12 @@
 import { useState } from "react"
-
+// import { LoadingScreen } from "./components/LoadingScreen"
+// import { Home } from "./components/sections/Home";
+import { Navbar } from "./components/Navbar";
+import { MobileMenu } from "./components/MobileMenu";
+import { About } from "./components/sections/About";
+import { Projects } from "./components/sections/Projects";
+import { Contact } from "./components/sections/Contact";
+import "./index.css";
 function App() {
 
   // const [person, setPerson] = useState ({
@@ -23,38 +30,43 @@ function App() {
   //   <button onClick={incrementCount}>Incrémenter{count}</button>
   // </>
 
-  const [firstname, setFirstname] = useState('Name')
-  const [email, setEmail] = useState('Email')
-  const [message, setMessage] = useState('Message')
+  // const [firstname, setFirstname] = useState('Name')
+  // const [email, setEmail] = useState('Email')
+  // const [message, setMessage] = useState('Message')
 
-  // const handleChange = (e) => {
-  //   setFirstname(e.target.value)
+  // const reset = () => {
+  //   setFirstname('Name')
+  //   setEmail('Email')
+  //   setMessage('Message')
   // }
 
-  // const handleChange = (e) => {
-  //   setEmail(e.target.value)
+  // const submit = (e) => {
+  //   alert(`Votre message a bien été envoyé`)
   // }
-
-  const reset = () => {
-    setFirstname('Name')
-    setEmail('Email')
-    setMessage('Message')
-  }
-
-  const submit = (e) => {
-    // event.preventDefault()
-    alert(`Votre message a bien été envoyé`)
-  }
   
+  // return (
+  //   <form>
+  //     <input type="text" name="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)}></input>
+  //     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+  //     <textarea value={message} onChange={(e) => setMessage(e.target.value)}/>
+  //     <button onClick={reset} type="button">Reset</button>
+  //     <input onClick={submit} type="submit" value="Send"/>
+  //   </form>
+  // )
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <form>
-      <input type="text" name="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)}></input>
-      <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-      <textarea value={message} onChange={(e) => setMessage(e.target.value)}/>
-      <button onClick={reset} type="button">Reset</button>
-      <input onClick={submit} type="submit" value="Send"/>
-    </form>
+    <>
+      {/* <LoadingScreen/>  */}
+      <div>
+      <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <About/>
+      <Projects/>
+      <Contact/>
+      </div>
+    </>  
   )
-} 
+}
 
 export default App
