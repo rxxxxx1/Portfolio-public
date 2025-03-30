@@ -1,10 +1,10 @@
 import { useState } from "react"
 // import { LoadingScreen } from "./components/LoadingScreen"
-// import { Home } from "./components/sections/Home";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
+import { Skills } from "./components/sections/Skills";
 import { Contact } from "./components/sections/Contact";
 import "./index.css";
 function App() {
@@ -63,6 +63,7 @@ function App() {
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <About/>
       <Projects/>
+      <Skills/>
       <Contact/>
       </div>
     </>  

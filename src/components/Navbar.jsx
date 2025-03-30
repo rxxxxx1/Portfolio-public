@@ -15,18 +15,11 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
       <div className="mr-[2.5em] float-right justify-end hidden md:block space-x-8">
 
             <a
-              href="#home"
-              className="text-gray-300 hove:text-white transition-colors"
-            >
-              {" "}
-              Home
-            </a>
-            <a
               href="#about"
               className="text-gray-300 hove:text-white transition-colors"
             >
               {" "}
-              About{" "}
+              About
             </a>
             <a
               href="#projects"
@@ -34,6 +27,13 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               {" "}
               Projects{" "}
+            </a>
+            <a
+              href="#skills"
+              className="text-gray-300 hove:text-white transition-colors"
+            >
+              {" "}
+              Skills{" "}
             </a>
             <a
               href="#contact"
@@ -51,8 +51,8 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           <span className="ml-[20px] font-source text-9xl text-white font-bold">réda.<br/></span>
         </a>
         <span className="ml-43.5 text-green-500">WEB DEVELOPER<br/></span>
-        <span className="font-ubuntu-mono text-sm italic text-gray-400 leading-[-px]">Git commit -m<br/>"Bienvenue dans mon univers"</span>
-        {/* <span className="font-ubuntu-mono text-sm italic text-gray-400 leading-none">"Bienvenue dans mon univers"</span> */}
+        <p className="leading-3 font-ubuntu-mono text-sm italic text-gray-400">Git commit -m<br></br><span class="-ml-1">"Bienvenue dans mon univers"</span></p>
+        {/* <span className="font-ubuntu-mono text-sm italic text-gray-400"></span> */}
       </div>
     </nav>
   )
