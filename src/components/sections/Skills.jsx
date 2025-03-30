@@ -20,7 +20,7 @@ export const Skills = () => {
 
       <div className="">
         <span className="text-gray-500 text-xs font-ibm-plex-mono tracking-widest">SKILLS —</span>
-        <h1 className="text-xl font-inter italic">çgugibib 🏁</h1>
+        <h1 className="text-xl font-inter italic">Tech and skills I use ⚡</h1>
       </div>
 
       <br></br>
@@ -72,12 +72,12 @@ export const Skills = () => {
               <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
+                  <strong> Level 5 qualification (Bac +2) web integrator/developer </strong> - Epitech
+                  (2024-2027)
                 </li>
                 <li>
-                  Relevant Coursework: Data Structures, Web Development, Cloud
-                  Computing...
+                <strong> BUT MT2E (Energy Transition and Efficiency Professions) </strong> - Université Gustave Eiffel
+                  (2021-2023)
                 </li>
               </ul>
             </div>
@@ -87,22 +87,10 @@ export const Skills = () => {
                 <div>
                   <h4 className="font-semibold">
                     {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
+                    Animateur périscolaire (2023 - 2024){" "}
                   </h4>
                   <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
-                  </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
+                  Design and adapt an activity linked to the educational theme.
                   </p>
                 </div>
               </div>
