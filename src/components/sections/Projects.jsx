@@ -2,11 +2,9 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Projects = () => {
   return (
-    <section id="projects" className="max-w-7xl m-auto mt-30 px-4">
-        <span className="text-gray-500 text-xs font-ibm-plex-mono tracking-widest">PROJECTS —</span>
-        <h1 className="font-inter italic text-xl">Stuff I've worked on 🗂️</h1>
-
-        <br></br>
+    <section id="projects" className="max-w-7xl m-auto mt-40 px-4">
+        <span className="text-gray-500 text-md tracking-widest">PROJECTS —</span>
+        <h1 className="text-2xl mb-5">Stuff I've worked on 🗂️</h1>
 
       <RevealOnScroll>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">

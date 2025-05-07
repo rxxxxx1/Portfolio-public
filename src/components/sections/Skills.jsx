@@ -2,25 +2,25 @@ import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Skills = () => {
   const frontendSkills = [
-    "HTML",
-    "React",
-    "TypeScript",
-    "TailwindCSS",
-    "Angular",
-  ];
+  { name: "HTML", icon: "🌐" },
+  { name: "React", icon: "⚛️" },
+  { name: "TypeScript", icon: "📘" },
+  { name: "TailwindCSS", icon: "🎨" },
+  { name: "Angular", icon: "🅰️" },
+];
 
   const backendSkills = ["Node.js", "React", "MVC", "MYSQL", "JS"];
 
   return (
     <section
       id="skills"
-      className="max-w-7xl m-auto mt-30 px-4"
+      className="max-w-7xl m-auto mt-40 px-4"
     >
       <RevealOnScroll>
 
       <div className="">
-        <span className="text-gray-500 text-xs font-ibm-plex-mono tracking-widest">SKILLS —</span>
-        <h1 className="text-xl font-inter italic">Tech and skills I use ⚡</h1>
+        <span className="text-gray-500 text-md tracking-widest">SKILLS —</span>
+        <h1 className="text-2xl">Tech and skills I use ⚡</h1>
       </div>
 
       <br></br>
@@ -43,7 +43,7 @@ export const Skills = () => {
                                     hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
                     "
                     >
-                      {tech}
+                      {tech.icon} {tech.name}
                     </span>
                   ))}
                 </div>
@@ -99,5 +99,5 @@ export const Skills = () => {
         </div>
       </RevealOnScroll>
     </section>
-  );
-};
+  )
+}

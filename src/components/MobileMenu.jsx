@@ -1,21 +1,24 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
-                     transition-all duration-300 ease-in-out
+      className={`fixed w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
 
                      ${
                        menuOpen
-                         ? "h-screen opacity-100 pointer-events-auto"
-                         : "h-0 opacity-0 pointer-events-none"
+                         ? "h-screen opacity-100"
+                         : "opacity-0 pointer-events-none"
                      }
                    `}
     >
+      <meta property="og:title" content="Réda's portfolio" />
+      <meta property="og:description" content="A passionate developer crafting clean, scalable web applications. Let's build something amazing together!" />
+      <meta property="og:image" content="" />
       <button
         onClick={() => setMenuOpen(false)}
-        className="absolute top-6 right-6 text-white text-3xl focus:outline-none cursor-pointer"
+        className="absolute top-3 right-6 text-white text-3xl focus: cursor-pointer"
         aria-label="Close Menu"
       >
         &times;
@@ -67,6 +70,12 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       >
         Contact
       </a>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+      </motion.div>
     </div>
   )
 }

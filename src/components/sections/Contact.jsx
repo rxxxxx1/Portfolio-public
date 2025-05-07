@@ -9,9 +9,12 @@ export const Contact = () => {
     message: "",
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICE_ID,
@@ -19,21 +22,27 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
-      .then((result) => {
-        alert("Message Sent!");
+      .then(() => {
+        setIsLoading(false);
+        setSuccessMessage("Votre message a été envoyé avec succès !");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      .catch(() => {
+        setIsLoading(false);
+        setSuccessMessage("Une erreur est survenue. Réessayez.");
+      });
   };
 
   return (
-    <section id="contact" className="min-h-screen">
+    <section id="contact" className="mb-20">
+      <meta name="description" content="Portfolio de Réda Adélaïde, développeur web passionné par la création d'expériences numériques interactives." />
+      <meta name="keywords" content="Portfolio, Développeur Web, React, TailwindCSS, Projets" />
 
       <RevealOnScroll>
         
         <div className="max-w-7xl mx-auto mt-30 px-4">
-        <span className="text-gray-500 text-xs font-ibm-plex-mono tracking-widest">CONTACT —</span>
-        <h1 className="text-xl font-inter italic">Ready to get started ? 🏁</h1>
+        <span className="text-gray-500 text-md tracking-widest">CONTACT —</span>
+        <h1 className="text-2xl">Ready to get started ? 🏁</h1>
         </div>
 
         <div className="mx-auto min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
@@ -85,11 +94,17 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+              disabled={isLoading}
+              className={`w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden ${
+                isLoading ? "opacity-50 cursor-not-allowed" : "hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
+              }`}
             >
-              Send Message
+              {isLoading ? "Envoi..." : "Send Message"}
             </button>
           </form>
+          {successMessage && (
+            <p className="text-center text-white mt-4">{successMessage}</p>
+          )}
         </div>
       </RevealOnScroll>
     </section>

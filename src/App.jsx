@@ -1,70 +1,47 @@
-import { useState } from "react"
-// import { LoadingScreen } from "./components/LoadingScreen"
+import { useState, useEffect } from "react";
+import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
+import { Home } from "./components/sections/Home";
+import { Background } from "./components/Background"; 
+// import ParticleBackground from "./components/ParticlesBackground";
+// import ParticlesComponent from "../particles-config";
+// import TestParticles from "./components/TestParticles";
 import { About } from "./components/sections/About";
+// import { TransitionSection } from "./components/TransitionSection";
 import { Projects } from "./components/sections/Projects";
 import { Skills } from "./components/sections/Skills";
 import { Contact } from "./components/sections/Contact";
 import "./index.css";
+
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // const [person, setPerson] = useState ({
-  //   firstName: 'Réda',
-  //   lastName: 'Adélaïde',
-  //   Age: 21
-  // })
-  // const [count, setCount] = useState(0)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 2000);
 
-  // const incrementAge = () => {
-  //   setPerson({...person, Age: person.Age + 1})
-  // }
-
-  // const incrementCount = () => {
-  //   setCount(count+1)
-  // }
-
-  // return <>
-  //   <p>Age de {person.firstName} : {person.Age}</p>
-  //   <button onClick={incrementAge}>Gagner une année</button>
-  //   <button onClick={incrementCount}>Incrémenter{count}</button>
-  // </>
-
-  // const [firstname, setFirstname] = useState('Name')
-  // const [email, setEmail] = useState('Email')
-  // const [message, setMessage] = useState('Message')
-
-  // const reset = () => {
-  //   setFirstname('Name')
-  //   setEmail('Email')
-  //   setMessage('Message')
-  // }
-
-  // const submit = (e) => {
-  //   alert(`Votre message a bien été envoyé`)
-  // }
-  
-  // return (
-  //   <form>
-  //     <input type="text" name="firstname" value={firstname} onChange={(e) => setFirstname(e.target.value)}></input>
-  //     <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-  //     <textarea value={message} onChange={(e) => setMessage(e.target.value)}/>
-  //     <button onClick={reset} type="button">Reset</button>
-  //     <input onClick={submit} type="submit" value="Send"/>
-  //   </form>
-  // )
-  const [menuOpen, setMenuOpen] = useState(false)
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-      {/* <LoadingScreen/>  */}
+ {!isLoaded && <LoadingScreen text="Chargement..." />}
       <div>
+      <Background />
+      {/* <TestParticles /> */}
       <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <About/>
-      <Projects/>
-      <Skills/>
-      <Contact/>
+      {/* <ParticleBackground /> */}
+      {/* <ParticlesComponent /> */}
+      <Home />
+      <About />
+      <Projects />
+      <Skills />
+      <Contact />
+      {/* <TransitionSection /> */}
       </div>
     </>  
   )
